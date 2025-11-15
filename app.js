@@ -72,6 +72,17 @@ function selectAnswer(value) {
 
     // 启用下一题按钮
     document.getElementById('next-btn').disabled = false;
+
+    // 自动跳转到下一题（添加短暂延迟以显示选择效果）
+    setTimeout(() => {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            loadQuestion();
+        } else {
+            // 最后一题，计算结果
+            calculateResult();
+        }
+    }, 300);
 }
 
 // 上一题
