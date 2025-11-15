@@ -3,6 +3,18 @@ const typeDescriptions = {
     "INTJ": {
         nickname: "建筑师",
         title: "富有想象力和战略性的思考者，一切皆有计划",
+        traits: ["战略思维", "独立", "创新", "理性", "追求完美", "有远见"],
+        celebrities: [
+            { name: "埃隆·马斯克", field: "企业家", icon: "🚀" },
+            { name: "牛顿", field: "科学家", icon: "🍎" },
+            { name: "尼采", field: "哲学家", icon: "📚" },
+            { name: "克里斯托弗·诺兰", field: "导演", icon: "🎬" }
+        ],
+        compatibility: [
+            { type: "ENFP", label: "最佳搭档", percentage: 95 },
+            { type: "ENTP", label: "智力碰撞", percentage: 90 },
+            { type: "INFJ", label: "深度理解", percentage: 85 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -26,6 +38,18 @@ const typeDescriptions = {
     "INTP": {
         nickname: "逻辑学家",
         title: "具有创新精神的发明家，对知识有着止不住的渴望",
+        traits: ["逻辑分析", "好奇心强", "创新", "独立思考", "理论派", "客观"],
+        celebrities: [
+            { name: "爱因斯坦", field: "物理学家", icon: "🧪" },
+            { name: "比尔·盖茨", field: "企业家", icon: "💻" },
+            { name: "达尔文", field: "生物学家", icon: "🔬" },
+            { name: "拉里·佩奇", field: "Google创始人", icon: "🔍" }
+        ],
+        compatibility: [
+            { type: "ENTJ", label: "互补伙伴", percentage: 90 },
+            { type: "INFJ", label: "思想共鸣", percentage: 85 },
+            { type: "ENFP", label: "激发灵感", percentage: 80 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -49,6 +73,18 @@ const typeDescriptions = {
     "ENTJ": {
         nickname: "指挥官",
         title: "大胆、富有想象力且意志强大的领导者，总能找到或创造解决方法",
+        traits: ["领导力", "果断", "战略眼光", "高效", "自信", "目标导向"],
+        celebrities: [
+            { name: "史蒂夫·乔布斯", field: "企业家", icon: "🍏" },
+            { name: "拿破仑", field: "军事家", icon: "⚔️" },
+            { name: "玛格丽特·撒切尔", field: "政治家", icon: "👔" },
+            { name: "戈登·拉姆齐", field: "厨师", icon: "👨‍🍳" }
+        ],
+        compatibility: [
+            { type: "INTP", label: "智慧组合", percentage: 90 },
+            { type: "INFP", label: "温柔平衡", percentage: 85 },
+            { type: "ENFP", label: "活力搭档", percentage: 88 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -72,6 +108,18 @@ const typeDescriptions = {
     "ENTP": {
         nickname: "辩论家",
         title: "聪明好奇的思考者，无法抗拒智力上的挑战",
+        traits: ["思维敏捷", "创新", "辩论", "适应力强", "好奇", "灵活"],
+        celebrities: [
+            { name: "托马斯·爱迪生", field: "发明家", icon: "💡" },
+            { name: "本杰明·富兰克林", field: "政治家", icon: "⚡" },
+            { name: "小罗伯特·唐尼", field: "演员", icon: "🎭" },
+            { name: "马克·扎克伯格", field: "Facebook创始人", icon: "📱" }
+        ],
+        compatibility: [
+            { type: "INFJ", label: "深度连接", percentage: 92 },
+            { type: "INTJ", label: "思想碰撞", percentage: 90 },
+            { type: "ENFJ", label: "互补伙伴", percentage: 85 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -95,6 +143,18 @@ const typeDescriptions = {
     "INFJ": {
         nickname: "提倡者",
         title: "安静而神秘，同时鼓舞人心且不知疲倦的理想主义者",
+        traits: ["洞察力", "同理心", "理想主义", "有原则", "深度", "创造力"],
+        celebrities: [
+            { name: "柏拉图", field: "哲学家", icon: "🏛️" },
+            { name: "尼尔森·曼德拉", field: "政治家", icon: "✊" },
+            { name: "甘地", field: "社会活动家", icon: "🕊️" },
+            { name: "卡尔·荣格", field: "心理学家", icon: "🧠" }
+        ],
+        compatibility: [
+            { type: "ENTP", label: "完美互补", percentage: 92 },
+            { type: "ENFP", label: "精神伴侣", percentage: 90 },
+            { type: "INTJ", label: "深度理解", percentage: 85 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -118,6 +178,18 @@ const typeDescriptions = {
     "INFP": {
         nickname: "调停者",
         title: "诗意、善良的利他主义者，总是热情地为正义事业而努力",
+        traits: ["理想主义", "创造力", "真诚", "善良", "同理心", "追求意义"],
+        celebrities: [
+            { name: "威廉·莎士比亚", field: "剧作家", icon: "✍️" },
+            { name: "J.K.罗琳", field: "作家", icon: "📖" },
+            { name: "约翰尼·德普", field: "演员", icon: "🎪" },
+            { name: "奥黛丽·赫本", field: "演员", icon: "🌹" }
+        ],
+        compatibility: [
+            { type: "ENFJ", label: "理想搭档", percentage: 93 },
+            { type: "ENTJ", label: "互补组合", percentage: 85 },
+            { type: "INFJ", label: "灵魂伴侣", percentage: 88 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -141,6 +213,18 @@ const typeDescriptions = {
     "ENFJ": {
         nickname: "主人公",
         title: "有魅力鼓舞人心的领导者，有能力吸引听众",
+        traits: ["领导力", "同理心", "魅力", "激励他人", "组织能力", "热情"],
+        celebrities: [
+            { name: "奥普拉·温弗瑞", field: "主持人", icon: "📺" },
+            { name: "马丁·路德·金", field: "民权领袖", icon: "🎤" },
+            { name: "奥巴马", field: "政治家", icon: "🎙️" },
+            { name: "本·阿弗莱克", field: "演员", icon: "🌟" }
+        ],
+        compatibility: [
+            { type: "INFP", label: "完美互补", percentage: 93 },
+            { type: "ISFP", label: "温柔搭档", percentage: 88 },
+            { type: "ENFP", label: "活力组合", percentage: 90 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -164,6 +248,18 @@ const typeDescriptions = {
     "ENFP": {
         nickname: "竞选者",
         title: "热情、有创造力且善于社交的自由精神，总能找到理由微笑",
+        traits: ["热情", "创造力", "灵活", "乐观", "善于社交", "好奇心"],
+        celebrities: [
+            { name: "罗宾·威廉姆斯", field: "演员", icon: "🎭" },
+            { name: "艾伦·德杰尼勒斯", field: "主持人", icon: "😄" },
+            { name: "沃尔特·迪士尼", field: "企业家", icon: "🏰" },
+            { name: "威尔·史密斯", field: "演员", icon: "🎬" }
+        ],
+        compatibility: [
+            { type: "INTJ", label: "完美互补", percentage: 95 },
+            { type: "INFJ", label: "深度连接", percentage: 90 },
+            { type: "ENTJ", label: "活力组合", percentage: 88 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -187,6 +283,18 @@ const typeDescriptions = {
     "ISTJ": {
         nickname: "物流师",
         title: "实际且注重事实的个人，可靠性不容怀疑",
+        traits: ["可靠", "务实", "有条理", "负责", "传统", "细心"],
+        celebrities: [
+            { name: "乔治·华盛顿", field: "政治家", icon: "🎩" },
+            { name: "沃伦·巴菲特", field: "投资家", icon: "💰" },
+            { name: "安吉拉·默克尔", field: "政治家", icon: "👩‍💼" },
+            { name: "杰夫·贝索斯", field: "企业家", icon: "📦" }
+        ],
+        compatibility: [
+            { type: "ESFP", label: "活力互补", percentage: 87 },
+            { type: "ESTP", label: "行动派", percentage: 85 },
+            { type: "ISFJ", label: "稳定伙伴", percentage: 90 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -210,6 +318,18 @@ const typeDescriptions = {
     "ISFJ": {
         nickname: "守卫者",
         title: "非常专注而温暖的守护者，时刻准备保护爱着的人们",
+        traits: ["温暖", "忠诚", "细心", "负责", "体贴", "传统"],
+        celebrities: [
+            { name: "特蕾莎修女", field: "慈善家", icon: "🙏" },
+            { name: "凯特·米德尔顿", field: "王室成员", icon: "👑" },
+            { name: "罗莎·帕克斯", field: "民权活动家", icon: "✊" },
+            { name: "比昂斯", field: "歌手", icon: "🎤" }
+        ],
+        compatibility: [
+            { type: "ESTP", label: "活力搭档", percentage: 88 },
+            { type: "ESFP", label: "温暖组合", percentage: 90 },
+            { type: "ISTJ", label: "稳定伙伴", percentage: 90 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -233,6 +353,18 @@ const typeDescriptions = {
     "ESTJ": {
         nickname: "总经理",
         title: "出色的管理者，无与伦比的管理事物或人的能力",
+        traits: ["组织力", "果断", "高效", "传统", "领导力", "务实"],
+        celebrities: [
+            { name: "亨利·福特", field: "企业家", icon: "🚗" },
+            { name: "文斯·隆巴迪", field: "教练", icon: "🏈" },
+            { name: "艾玛·沃森", field: "演员", icon: "📚" },
+            { name: "希拉里·克林顿", field: "政治家", icon: "🏛️" }
+        ],
+        compatibility: [
+            { type: "ISFP", label: "温柔平衡", percentage: 86 },
+            { type: "ISTP", label: "务实组合", percentage: 85 },
+            { type: "ESFJ", label: "组织伙伴", percentage: 88 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -256,6 +388,18 @@ const typeDescriptions = {
     "ESFJ": {
         nickname: "执政官",
         title: "极有同情心、善于社交且广受欢迎的人，总是热心地帮助他人",
+        traits: ["热心", "善良", "合作", "组织力", "社交", "负责"],
+        celebrities: [
+            { name: "泰勒·斯威夫特", field: "歌手", icon: "🎵" },
+            { name: "詹妮弗·加纳", field: "演员", icon: "🎬" },
+            { name: "萨拉·佩林", field: "政治家", icon: "🗳️" },
+            { name: "丹尼·凯", field: "演员", icon: "🎭" }
+        ],
+        compatibility: [
+            { type: "ISFP", label: "温暖搭档", percentage: 90 },
+            { type: "ISTP", label: "平衡组合", percentage: 85 },
+            { type: "ESTJ", label: "合作伙伴", percentage: 88 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -279,6 +423,18 @@ const typeDescriptions = {
     "ISTP": {
         nickname: "鉴赏家",
         title: "大胆而实际的实验者，擅长使用各种工具",
+        traits: ["灵活", "务实", "冷静", "独立", "动手能力", "适应力"],
+        celebrities: [
+            { name: "克林特·伊斯特伍德", field: "演员", icon: "🤠" },
+            { name: "贝尔·格里尔斯", field: "探险家", icon: "🏔️" },
+            { name: "汤姆·克鲁斯", field: "演员", icon: "✈️" },
+            { name: "迈克尔·乔丹", field: "篮球运动员", icon: "🏀" }
+        ],
+        compatibility: [
+            { type: "ESFJ", label: "互补伙伴", percentage: 85 },
+            { type: "ESTJ", label: "务实组合", percentage: 85 },
+            { type: "ENFP", label: "激发活力", percentage: 82 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -302,6 +458,18 @@ const typeDescriptions = {
     "ISFP": {
         nickname: "探险家",
         title: "灵活有魅力的艺术家，时刻准备探索和体验新事物",
+        traits: ["艺术", "温和", "灵活", "敏感", "审美", "真诚"],
+        celebrities: [
+            { name: "迈克尔·杰克逊", field: "歌手", icon: "🎤" },
+            { name: "玛丽莲·梦露", field: "演员", icon: "💋" },
+            { name: "大卫·贝克汉姆", field: "足球运动员", icon: "⚽" },
+            { name: "莫扎特", field: "作曲家", icon: "🎹" }
+        ],
+        compatibility: [
+            { type: "ESFJ", label: "温暖搭档", percentage: 90 },
+            { type: "ESTJ", label: "平衡组合", percentage: 86 },
+            { type: "ENFJ", label: "理解伙伴", percentage: 88 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -325,6 +493,18 @@ const typeDescriptions = {
     "ESTP": {
         nickname: "企业家",
         title: "聪明、精力充沛且善于感知的人，真正享受生活在边缘的快感",
+        traits: ["行动力", "灵活", "冒险", "务实", "社交", "适应力"],
+        celebrities: [
+            { name: "唐纳德·特朗普", field: "企业家", icon: "🏢" },
+            { name: "麦当娜", field: "歌手", icon: "🎤" },
+            { name: "布鲁斯·威利斯", field: "演员", icon: "🔫" },
+            { name: "欧内斯特·海明威", field: "作家", icon: "✍️" }
+        ],
+        compatibility: [
+            { type: "ISFJ", label: "温柔平衡", percentage: 88 },
+            { type: "ISTJ", label: "稳定组合", percentage: 85 },
+            { type: "ESFP", label: "活力搭档", percentage: 90 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>
@@ -348,6 +528,18 @@ const typeDescriptions = {
     "ESFP": {
         nickname: "表演者",
         title: "自发的、精力充沛且热情的表演者——生活在他们周围永远不会无聊",
+        traits: ["热情", "友善", "乐观", "灵活", "表现力", "活在当下"],
+        celebrities: [
+            { name: "玛丽莲·梦露", field: "演员", icon: "💃" },
+            { name: "艾尔顿·约翰", field: "歌手", icon: "🎹" },
+            { name: "杰米·奥利弗", field: "厨师", icon: "👨‍🍳" },
+            { name: "米莉·波比·布朗", field: "演员", icon: "🌟" }
+        ],
+        compatibility: [
+            { type: "ISFJ", label: "温暖搭档", percentage: 90 },
+            { type: "ISTJ", label: "互补组合", percentage: 87 },
+            { type: "ESTP", label: "活力伙伴", percentage: 90 }
+        ],
         description: `
             <h3>性格特点：</h3>
             <ul>

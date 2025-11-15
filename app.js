@@ -143,6 +143,18 @@ function showResult(mbtiType) {
 
     // 计算并显示各维度的百分比
     displayDimensionScores();
+
+    // 更新雷达图
+    updateRadarChart();
+
+    // 显示性格特征标签
+    displayTraits(typeInfo.traits);
+
+    // 显示同类型名人
+    displayCelebrities(typeInfo.celebrities);
+
+    // 显示匹配度
+    displayCompatibility(typeInfo.compatibility);
 }
 
 // 显示维度分数
@@ -243,6 +255,93 @@ document.addEventListener('keydown', (e) => {
         nextQuestion();
     }
 });
+
+// 更新雷达图
+function updateRadarChart() {
+    const maxScore = 75;
+
+    // 计算每个维度的标准化值（0-80范围，用于雷达图坐标）
+    const normalizeScore = (score) => {
+        const percentage = Math.abs(score) / maxScore;
+        return 40 + (percentage * 40); // 40是中心点，最大延伸40个单位
+    };
+
+    // 计算雷达图坐标点
+    const eiValue = normalizeScore(scores.EI);
+    const snValue = normalizeScore(scores.SN);
+    const tfValue = normalizeScore(scores.TF);
+    const jpValue = normalizeScore(scores.JP);
+
+    // 六边形雷达图坐标计算（中心点100,100）
+    const centerX = 100, centerY = 100;
+    const points = [
+        [centerX, centerY - eiValue], // 上 (E/I)
+        [centerX + snValue * Math.cos(Math.PI / 6), centerY - snValue * Math.sin(Math.PI / 6)], // 右上 (S/N)
+        [centerX + tfValue * Math.cos(Math.PI / 6), centerY + tfValue * Math.sin(Math.PI / 6)], // 右下 (T/F)
+        [centerX, centerY + jpValue], // 下 (J/P)
+        [centerX - tfValue * Math.cos(Math.PI / 6), centerY + tfValue * Math.sin(Math.PI / 6)], // 左下
+        [centerX - snValue * Math.cos(Math.PI / 6), centerY - snValue * Math.sin(Math.PI / 6)]  // 左上
+    ];
+
+    // 更新SVG多边形
+    const pointsString = points.map(p => `${p[0]},${p[1]}`).join(' ');
+    const radarData = document.getElementById('radar-data');
+    if (radarData) {
+        radarData.setAttribute('points', pointsString);
+    }
+}
+
+// 显示性格特征标签
+function displayTraits(traits) {
+    const container = document.getElementById('traits-tags');
+    container.innerHTML = '';
+
+    traits.forEach((trait, index) => {
+        const tag = document.createElement('div');
+        tag.className = 'trait-tag';
+        tag.textContent = trait;
+        tag.style.animationDelay = `${index * 0.1}s`;
+        container.appendChild(tag);
+    });
+}
+
+// 显示同类型名人
+function displayCelebrities(celebrities) {
+    const container = document.getElementById('celebrities-grid');
+    container.innerHTML = '';
+
+    celebrities.forEach(celeb => {
+        const card = document.createElement('div');
+        card.className = 'celebrity-card';
+        card.innerHTML = `
+            <div class="celebrity-icon">${celeb.icon}</div>
+            <div class="celebrity-name">${celeb.name}</div>
+            <div class="celebrity-field">${celeb.field}</div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// 显示类型匹配度
+function displayCompatibility(compatibility) {
+    const container = document.getElementById('compatibility-grid');
+    container.innerHTML = '';
+
+    compatibility.forEach(comp => {
+        const item = document.createElement('div');
+        item.className = 'compatibility-item';
+        item.innerHTML = `
+            <div class="compatibility-type">${comp.type}</div>
+            <div class="compatibility-info">
+                <div class="compatibility-label">${comp.label}</div>
+                <div class="compatibility-bar">
+                    <div class="compatibility-fill" style="width: ${comp.percentage}%"></div>
+                </div>
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
 
 // 页面加载完成
 document.addEventListener('DOMContentLoaded', () => {

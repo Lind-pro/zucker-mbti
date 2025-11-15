@@ -117,7 +117,57 @@
                     </div>
                 </div>
 
+                <!-- 雷达图 -->
+                <div class="radar-section">
+                    <h2>四维雷达图</h2>
+                    <div class="radar-chart" id="radar-chart">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- 背景网格 -->
+                            <polygon points="100,20 160,60 160,140 100,180 40,140 40,60" class="radar-grid" style="fill: none; stroke: #e0e0e0; stroke-width: 1;"/>
+                            <polygon points="100,40 140,70 140,130 100,160 60,130 60,70" class="radar-grid" style="fill: none; stroke: #e0e0e0; stroke-width: 1;"/>
+                            <polygon points="100,60 120,80 120,120 100,140 80,120 80,80" class="radar-grid" style="fill: none; stroke: #e0e0e0; stroke-width: 1;"/>
+
+                            <!-- 轴线 -->
+                            <line x1="100" y1="100" x2="100" y2="20" stroke="#ccc" stroke-width="1"/>
+                            <line x1="100" y1="100" x2="160" y2="60" stroke="#ccc" stroke-width="1"/>
+                            <line x1="100" y1="100" x2="160" y2="140" stroke="#ccc" stroke-width="1"/>
+                            <line x1="100" y1="100" x2="100" y2="180" stroke="#ccc" stroke-width="1"/>
+                            <line x1="100" y1="100" x2="40" y2="140" stroke="#ccc" stroke-width="1"/>
+                            <line x1="100" y1="100" x2="40" y2="60" stroke="#ccc" stroke-width="1"/>
+
+                            <!-- 数据多边形 -->
+                            <polygon id="radar-data" points="100,60 140,80 140,120 100,140 60,120 60,80"
+                                style="fill: rgba(102, 126, 234, 0.3); stroke: #667eea; stroke-width: 2;"/>
+
+                            <!-- 标签 -->
+                            <text x="100" y="15" text-anchor="middle" class="radar-label" style="font-size: 10px; fill: #667eea;">E/I</text>
+                            <text x="170" y="65" text-anchor="start" class="radar-label" style="font-size: 10px; fill: #667eea;">S/N</text>
+                            <text x="170" y="145" text-anchor="start" class="radar-label" style="font-size: 10px; fill: #667eea;">T/F</text>
+                            <text x="100" y="195" text-anchor="middle" class="radar-label" style="font-size: 10px; fill: #667eea;">J/P</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- 性格特征标签 -->
+                <div class="traits-section">
+                    <h2>核心特征</h2>
+                    <div class="traits-tags" id="traits-tags"></div>
+                </div>
+
+                <!-- 类型详细描述 -->
                 <div class="type-description" id="type-description"></div>
+
+                <!-- 名人同类型 -->
+                <div class="celebrities-section">
+                    <h2>同类型名人</h2>
+                    <div class="celebrities-grid" id="celebrities-grid"></div>
+                </div>
+
+                <!-- 相关类型匹配 -->
+                <div class="compatibility-section">
+                    <h2>类型匹配度</h2>
+                    <div class="compatibility-grid" id="compatibility-grid"></div>
+                </div>
 
                 <div class="result-actions">
                     <button class="btn-primary" onclick="restartTest()">重新测试</button>
